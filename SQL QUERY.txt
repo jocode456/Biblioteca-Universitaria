@@ -1,0 +1,15 @@
+CREATE DATABASE biblioteca_universitaria;
+
+CREATE TABLE autor (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    nacionalidade VARCHAR(50)
+);
+
+
+CREATE TABLE livro (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(150) NOT NULL,
+    ano_publicacao INT,
+    id_autor INT REFERENCES autor(id)
+);
